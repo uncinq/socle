@@ -1,0 +1,7 @@
+.DS_Store
+.hugo_build.lock
+/node_modules/
+/public/
+/resources/
+/_vendor/
+hugo_stats.json

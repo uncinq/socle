@@ -1,0 +1,12 @@
+_merge: deep
+
+description: The CSS foundation behind Un Cinq projects. Socle is French for foundation.
+
+search:
+  enable: true
+  layout: offcanvas
+  showImages: false
+  sort: true
+
+docs:
+  sidebarmenu: true

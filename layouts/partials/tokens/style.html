@@ -1,0 +1,43 @@
+{{- /*
+  Emits, once per page, the custom properties the previews resolve against,
+  plus the styling of the reference table itself.
+
+  The token declarations are inlined rather than linked. Each generated file
+  declares its own @layer tokens and contains no @import, so concatenating the
+  leaf files is enough; the barrels (index.css, primitive.css, semantic.css)
+  are the only files with @import and the glob below excludes them by depth.
+*/ -}}
+{{- if not (.Store.Get "tokensStyleEmitted") -}}
+  {{- $leaves := resources.Match "tokens/*/css/*/*.css" -}}
+  {{- $tokens := "" -}}
+  {{- range $leaves }}{{ $tokens = printf "%s\n%s" $tokens .Content }}{{ end -}}
+  {{- $css := $tokens | resources.FromString "css/tokens-inlined.css" | minify -}}
+  <style>{{ $css.Content | safeCSS }}</style>
+  <style>
+    .tokens { --sw: 2.5rem; margin-block: 1.5rem; overflow-x: auto; }
+    .tokens table { border-collapse: collapse; font-size: 0.875rem; width: 100%; }
+    .tokens th, .tokens td { border-block-end: 1px solid var(--color-border, #e5e5e5); padding: 0.5rem 0.75rem; text-align: start; vertical-align: middle; }
+    .tokens th { font-weight: 600; white-space: nowrap; }
+    .tokens code { font-size: 0.8125rem; overflow-wrap: anywhere; }
+    .tokens .t-name code { font-weight: 600; }
+    .tokens .t-preview { width: 1%; white-space: nowrap; }
+    .tokens .t-desc { color: var(--color-text-muted, #666); }
+    .tokens .t-empty { color: var(--color-text-muted, #666); font-style: italic; }
+
+    /* Checkerboard, so a transparent or translucent token reads as such. */
+    .sw { box-sizing: border-box; display: inline-block; }
+    .sw-color { block-size: var(--sw); inline-size: var(--sw); border: 1px solid var(--color-border, #e5e5e5); border-radius: 4px;
+      background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%), linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%);
+      background-size: 12px 12px; background-position: 0 0, 6px 6px; }
+    .sw-color i { display: block; block-size: 100%; inline-size: 100%; border-radius: 3px; }
+    .sw-bar { block-size: 0.75rem; background: var(--color-text, #333); border-radius: 2px; max-inline-size: 18rem; }
+    .sw-box { block-size: var(--sw); inline-size: var(--sw); background: var(--color-background-muted, #f4f4f4); border: 1px solid var(--color-border, #e5e5e5); }
+    .sw-shadow { block-size: var(--sw); inline-size: var(--sw); background: var(--color-background, #fff); border-radius: 4px; margin: 0.4rem; }
+    .sw-line { block-size: 0; inline-size: 8rem; border-block-start-width: 3px; border-block-start-color: var(--color-text, #333); }
+    .sw-text { line-height: 1.1; display: inline-block; }
+    .sw-blur { block-size: var(--sw); inline-size: var(--sw); background: linear-gradient(135deg, #7c3aed, #06b6d4); border-radius: 4px; }
+    .sw-ratio { block-size: auto; inline-size: 4rem; background: var(--color-background-muted, #f4f4f4); border: 1px solid var(--color-border, #e5e5e5); }
+    .sw-icon { block-size: 1.5rem; inline-size: 1.5rem; background: var(--color-text, #333); }
+  </style>
+  {{- .Store.Set "tokensStyleEmitted" true -}}
+{{- end -}}

@@ -1,0 +1,71 @@
+{{- /*
+  A visual preview of one token, so the reference reads to a human and not only
+  to a parser. The token is applied for real, through var(--its-name), rather
+  than reproduced: what you see is what the stylesheet does.
+
+  Every style attribute goes through safeCSS. Go's contextual autoescaping does
+  not recognise CSS custom properties and replaces `var(--color-brand)` with
+  ZgotmplZ otherwise. The names come from the package's own generated manifest,
+  never from user input, so marking them safe is sound.
+
+  Dispatch is on $type first, then on the name for the dimension family, where
+  the type alone does not say whether a length is a font size, a radius or a
+  gap. Anything with no meaningful visual renders nothing.
+
+  Context: one entry of dist/tokens.json.
+*/ -}}
+{{- $n := .name -}}
+{{- $t := .type -}}
+{{- $v := .value -}}
+
+{{- if eq $t "color" -}}
+  <span class="sw sw-color"><i style="{{ printf "background: var(%s)" $n | safeCSS }}"></i></span>
+
+{{- else if eq $t "shadow" -}}
+  <span class="sw sw-shadow" style="{{ printf "box-shadow: var(%s)" $n | safeCSS }}"></span>
+
+{{- else if eq $t "fontWeight" -}}
+  <span class="sw-text" style="{{ printf "font-weight: var(%s); font-size: 1.25rem" $n | safeCSS }}">Aa</span>
+
+{{- else if eq $t "fontFamily" -}}
+  <span class="sw-text" style="{{ printf "font-family: var(%s); font-size: 1.25rem" $n | safeCSS }}">Aa</span>
+
+{{- else if eq $t "strokeStyle" -}}
+  <span class="sw sw-line" style="{{ printf "border-block-start-style: var(%s)" $n | safeCSS }}"></span>
+
+{{- else if eq $t "cubicBezier" -}}
+  {{- /* A static curve would say little; the value itself is the documentation. */ -}}
+
+{{- else if eq $t "dimension" -}}
+  {{- if or (strings.Contains $n "font-size") (strings.Contains $n "line-height") -}}
+    <span class="sw-text" style="{{ printf "font-size: var(%s)" $n | safeCSS }}">Aa</span>
+  {{- else if strings.Contains $n "letter-spacing" -}}
+    <span class="sw-text" style="{{ printf "letter-spacing: var(%s); font-size: 1.1rem" $n | safeCSS }}">Aa</span>
+  {{- else if strings.Contains $n "radius" -}}
+    <span class="sw sw-box" style="{{ printf "border-radius: var(%s)" $n | safeCSS }}"></span>
+  {{- else if strings.Contains $n "border-width" -}}
+    <span class="sw sw-line" style="{{ printf "border-block-start-width: var(%s); border-block-start-style: solid" $n | safeCSS }}"></span>
+  {{- else if strings.Contains $n "blur" -}}
+    <span class="sw sw-blur" style="{{ printf "filter: blur(var(%s))" $n | safeCSS }}"></span>
+  {{- else -}}
+    {{- /* Lengths (size, spacing, gap, max-width) shown to scale, capped so a
+           1920px token does not stretch the table. */ -}}
+    <span class="sw sw-bar" style="{{ printf "inline-size: min(var(%s), 18rem)" $n | safeCSS }}"></span>
+  {{- end -}}
+
+{{- else if eq $t "number" -}}
+  {{- if strings.Contains $n "opacity" -}}
+    <span class="sw sw-color"><i style="{{ printf "background: var(--color-text, #333); opacity: var(%s)" $n | safeCSS }}"></i></span>
+  {{- else if strings.Contains $n "ratio" -}}
+    <span class="sw sw-ratio" style="{{ printf "aspect-ratio: var(%s)" $n | safeCSS }}"></span>
+  {{- end -}}
+
+{{- else if eq $t "string" -}}
+  {{- if strings.HasPrefix $v "url(" -}}
+    {{- /* Icon tokens are data URIs, drawn as a mask so they take currentColor
+           exactly as the components use them. */ -}}
+    <span class="sw sw-icon" style="{{ printf "mask: var(%s) center / contain no-repeat" $n | safeCSS }}"></span>
+  {{- else if strings.Contains $n "ratio" -}}
+    <span class="sw sw-ratio" style="{{ printf "aspect-ratio: var(%s)" $n | safeCSS }}"></span>
+  {{- end -}}
+{{- end -}}

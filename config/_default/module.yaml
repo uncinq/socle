@@ -1,0 +1,43 @@
+# Hugolify v1 stack. v2 is not usable here yet: hugolify-theme-uncinqify, which
+# carries the Un Cinq branding, has no v2 (its latest tag is 1.2.2).
+#
+# Switching to v2 later means, in one go: adding the /v2 suffix to theme-docs
+# and theme, and adding hugolify-theme-design-system. The v2 core theme ships
+# no assets/ at all and delegates CSS and JS to that styling module, so it
+# cannot be omitted. Note that the design system imports @uncinq/css-base and
+# @uncinq/css-components directly, so on v2 this site would be styled by the
+# very packages it documents.
+imports:
+  - path: github.com/sebousan/hugolify-theme-uncinqify
+  - path: github.com/hugolify/hugolify-theme-docs
+  - path: github.com/hugolify/hugolify-theme
+
+mounts:
+  # Declaring a mount for a component removes Hugo's default mount for THAT
+  # component. We mount into `content` and `assets` below, so those two
+  # defaults have to be restored here. Omitting them empties the site of its
+  # own content and assets, silently and without an error.
+  - source: content
+    target: content
+  - source: assets
+    target: assets
+
+  # Documentation carried by each package, read straight from node_modules.
+  # Nothing is copied: npm is the transport, the packages own the prose.
+  - source: node_modules/@uncinq/design-tokens/docs
+    target: content/docs/design-tokens
+  - source: node_modules/@uncinq/component-tokens/docs
+    target: content/docs/component-tokens
+  - source: node_modules/@uncinq/css-base/docs
+    target: content/docs/css-base
+  - source: node_modules/@uncinq/css-components/docs
+    target: content/docs/css-components
+
+  # dist/ of the two token packages. Serves both the generated reference
+  # (dist/tokens.json) and the custom properties the previews resolve against
+  # (dist/css/). A mount source is a directory, never a single file, which is
+  # why the whole of dist/ comes across.
+  - source: node_modules/@uncinq/design-tokens/dist
+    target: assets/tokens/design
+  - source: node_modules/@uncinq/component-tokens/dist
+    target: assets/tokens/component

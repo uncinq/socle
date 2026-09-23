@@ -1,0 +1,39 @@
+title: Socle
+
+## LANGUAGE
+defaultContentLanguage: en
+
+## ADVANCED
+build:
+  buildStats:
+    disableClasses: false
+    disableIDs: true
+    disableTags: false
+    enable: true
+enableRobotsTXT: true
+
+# Plain-text rendering of the whole documentation, for agents and for anyone
+# who wants the lot in one request. Mirrors the pattern used on hugolify.io.
+outputFormats:
+  llms:
+    baseName: llms-full
+    isPlainText: true
+    mediaType: text/plain
+    notAlternative: true
+outputs:
+  home:
+    - HTML
+    - RSS
+    - llms
+
+imaging:
+  quality: 75
+markup:
+  tableOfContents:
+    ordered: true
+  goldmark:
+    renderer:
+      unsafe: true
+pagination:
+  pagerSize: 20
+removePathAccents: true

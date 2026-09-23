@@ -1,0 +1,37 @@
+[build]
+  # Refresh only the four documented packages, within their ^ ranges, so a
+  # release republishes the docs without touching the rest of the tree.
+  command = "yarn upgrade --pattern '@uncinq/' && yarn build:search"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.152.2"
+  GO_VERSION = "1.24.2"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+
+[context.deploy-preview]
+  command = "yarn upgrade --pattern '@uncinq/' && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL && npm_config_yes=true npx pagefind --site 'public'"
+
+[context.branch-deploy]
+  command = "yarn upgrade --pattern '@uncinq/' && hugo --gc --minify -b $DEPLOY_PRIME_URL && npm_config_yes=true npx pagefind --site 'public'"
+
+[context.branch-deploy.environment]
+  HUGO_ENV = "staging"
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "0"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

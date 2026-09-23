@@ -1,0 +1,43 @@
+{{- /*
+  /llms-full.txt — the whole documentation as plain text, in one request.
+
+  Renders the Markdown source rather than the rendered HTML, so the output stays
+  readable and keeps its structure. Pages are walked in sidebar order (section
+  weight, then page weight) so the text reads in the same sequence as the site.
+
+  This is the remote counterpart of the docs/ folder each package ships in its
+  npm tarball: the same prose, reachable without installing anything.
+*/ -}}
+# {{ site.Title }}
+
+{{ with site.Params.description }}{{ . }}{{ end }}
+
+> Generated from {{ site.BaseURL }} on {{ now.Format "2006-01-02" }}.
+> Each section below is maintained in its own package repository, under docs/,
+> and mounted here from node_modules. Nothing is transcribed.
+
+{{ $docs := site.GetPage "/docs" }}
+{{- with $docs }}
+{{- range .Pages.ByWeight }}
+{{- $section := . }}
+
+================================================================================
+{{ .Title | upper }}
+================================================================================
+{{ with .Description }}
+{{ . }}
+{{ end }}
+{{ with .RawContent }}{{ . }}{{ end }}
+{{ range .Pages.ByWeight }}
+
+--------------------------------------------------------------------------------
+{{ $section.Title }} / {{ .Title }}
+{{ .Permalink }}
+--------------------------------------------------------------------------------
+{{ with .Description }}
+{{ . }}
+{{ end }}
+{{ .RawContent }}
+{{- end }}
+{{- end }}
+{{- end }}
