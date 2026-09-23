@@ -1,0 +1,54 @@
+// Site-specific overrides for socle.uncinq.dev.
+// The theme imports this from main.sass; its own site.sass is an empty
+// placeholder, so this file shadows it rather than replacing anything.
+
+// Highlighted menu item
+// ---------------------
+// hugolify-theme builds it with @include button-variant($primary, $primary),
+// which sets fill and border to the same colour. $primary is white in this
+// branding, so the item came out ringed in white. The variant gives no hook of
+// its own, so the border is taken back down here, on the CSS variables the
+// mixin emits. The fill is left alone.
+.main-menu
+    .nav-item-highlighted
+        a
+            --bs-btn-border-color: #{$gray-200}
+            --bs-btn-hover-border-color: #{$gray-200}
+            --bs-btn-active-border-color: #{$gray-200}
+            --bs-btn-disabled-border-color: #{$gray-200}
+
+// Inline code
+// -----------
+// Bootstrap gives `code` a colour (pink #d63384) and nothing else, so inline
+// code sat flat in the prose. This turns it into a chip: anthracite fill,
+// white text, small radius and padding.
+//
+// $gray-200 is this branding's anthracite, and it sits next to the #272822 the
+// syntax highlighter paints its blocks with, so inline code and code blocks
+// read as the same family.
+//
+// The global $border-radius is 2rem, meant for buttons and cards; applied here
+// it would turn every inline snippet into a pill, hence a separate value.
+$site-code-bg: $gray-200
+$site-code-radius: .25rem
+$site-code-padding-y: .5em
+$site-code-padding-x: .5em
+
+// :not(pre > code) keeps code BLOCKS out of this. A highlighted block brings
+// its own background and padding, and padding on the inner <code> would push
+// its first line off the gutter.
+code:not(pre > code)
+    background-color: $site-code-bg
+    border-radius: $site-code-radius
+    color: $body-color
+    padding: $site-code-padding-y $site-code-padding-x
+
+// Bootstrap has `a > code { color: inherit }` so a snippet inside a link keeps
+// the link colour. The rule above is more specific and would override it, so
+// the behaviour is restated here.
+a > code:not(pre > code)
+    color: inherit
+
+.block-editorial 
+    img
+        filter: invert(1)

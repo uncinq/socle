@@ -1,0 +1,20 @@
+links:
+  - title: Documentation
+    url: /docs/
+    links:
+      - title: Getting started
+        text: How to install and setup packages.
+        url: /docs/getting-started/
+      - title: Design tokens
+        text: Colors, typography, spacing and motion.
+        url: /docs/design-tokens/
+      - title: Component tokens
+        text: Component-scoped tokens for 26 components.
+        url: /docs/component-tokens/
+      - title: CSS base
+        text: Reset, native elements and layout primitives.
+        url: /docs/css-base/
+      - title: CSS components
+        text: 29 components and 1 utility.
+        url: /docs/css-components/
+  
