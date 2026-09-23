@@ -1,7 +1,12 @@
 [build]
-  # Refresh only the four documented packages, within their ^ ranges, so a
-  # release republishes the docs without touching the rest of the tree.
-  command = "yarn upgrade --pattern '@uncinq/' && yarn build:search"
+  # `yarn install` first: `yarn upgrade` refuses to run without a lockfile, and
+  # Netlify falls back to npm when it does not find yarn.lock. Running it here
+  # makes the command work whatever Netlify decided to do before it.
+  #
+  # The upgrade then refreshes only the four documented packages, within their
+  # ^ ranges, so a package release republishes the docs. It rewrites yarn.lock
+  # in the build checkout, which is thrown away.
+  command = "yarn install && yarn upgrade --pattern '@uncinq/' && yarn build:search"
   publish = "public"
 
 [build.environment]

@@ -28,14 +28,14 @@ yarn install
 yarn watch
 ```
 
-To work against local package checkouts instead of the published versions:
+To preview a package's documentation before publishing it, link the local checkout:
 
 ```bash
 cd ../css-base && yarn link     # once per package
 cd ../socle.uncinq.dev && yarn link @uncinq/css-base
 ```
 
-This is currently required rather than optional: the packages have not been published with their `docs/` folder yet, so a plain install builds a site with empty sections.
+Run `yarn unlink @uncinq/css-base` to go back to the published version.
 
 | Command | Does |
 | --- | --- |
