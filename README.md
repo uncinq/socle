@@ -1,6 +1,8 @@
 # Socle
 
-> Documentation site for the Un Cinq CSS foundation.
+> Documentation site for the CSS foundation.
+
+<img width="1280" height="640" alt="share-socle" src="https://github.com/user-attachments/assets/ed0c4483-a9d6-49f5-99de-ebda466c9f4f" />
 
 **Socle** is French for *foundation*, which is what the four packages it documents are: the ground you build a design system on, not the design system itself.
 
