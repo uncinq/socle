@@ -1,0 +1,7 @@
+@layer components {
+    .block-editorial:not(.block-white, .block-highlighht) {
+        img {
+            filter: invert(1);
+        }
+    }
+}

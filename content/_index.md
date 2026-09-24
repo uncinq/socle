@@ -1,6 +1,6 @@
 ---
 isIndex: true
-title: Socle
+title: Home
 description: A framework-agnostic CSS foundation, four packages covering tokens, reset, layouts and components.
 hero:
   surtitle: CSS foundation
@@ -11,13 +11,12 @@ hero:
     - text: GitHub
       url: https://github.com/uncinq/
       blank: true
-      link: true
 blocks:
   - type: informations
     column: 4
     ui:
       align: center
-      theme: light
+      theme: white
     heading:
       surtitle: Framework-agnostic
       title: Works anywhere CSS does

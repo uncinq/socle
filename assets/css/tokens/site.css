@@ -1,0 +1,99 @@
+/* tokens/site.css */
+/*
+ * Un Cinq dark scheme — fixed, not a dark mode.
+ *
+ * This site is dark whatever the visitor's OS says, so the palette is declared
+ * on :root once and nothing here sits behind prefers-color-scheme. The theme
+ * (hugolify-theme-uncinqify) sets css.darkmode: false for the same reason: the
+ * core then puts data-color-scheme="light" on <html>, which is what keeps
+ * @uncinq/design-tokens' themes/dark.css out of the way. Read that attribute as
+ * "the OS does not get a say", not as "this site is light".
+ *
+ * hugolify-theme-design-system imports this file after the theme's own tokens,
+ * so these win. The values come from the SASS site variables, kept exact — the
+ * gray ramp below carries them, and the semantic tokens read the ramp.
+ *
+ * What is NOT here: shape (radius, button padding), header, footer and menu
+ * surfaces. Those follow --color-background on their own, or are still to be
+ * ported from assets/sass/abstracts/_variables-site.sass.
+ */
+@layer tokens {
+  :root {
+    /* ── Gray ramp ────────────────────────────────────────────────────
+       Rebuilt on the SASS site grays. Two things separate it from the
+       design-tokens ramp it replaces: those grays are achromatic where
+       upstream leans blue (chroma .002 to .022 around hue 264, enough to
+       tint a whole page painted in grays), and their dark end falls
+       elsewhere — #111111 had no rung at all, hence the hardcoded values
+       this file used to repeat.
+
+       The dark rungs are the site values, exact. The light ones keep the
+       upstream lightness and only drop the chroma: nothing on the page is
+       painted with them, they are here so the ramp stays a ramp.
+
+       Direction is unchanged, 50 lightest to 950 darkest. The semantic
+       tokens upstream count on it and not all of them follow the scheme:
+       --color-highlight is a pale yellow here too, and its text still has
+       to be dark. Inverting the ramp would turn that white on cream. */
+    --color-gray-50: oklch(98.5% 0 0);
+    --color-gray-100: oklch(96.7% 0 0);
+    --color-gray-200: oklch(92.8% 0 0);
+    --color-gray-300: oklch(87.2% 0 0);
+    --color-gray-400: oklch(74.12% 0 0); /* #ababab — $text-muted */
+    --color-gray-500: oklch(55.6% 0 0);
+    --color-gray-600: oklch(43.9% 0 0);
+    --color-gray-700: oklch(32.11% 0 0); /* #333333 — $border-color */
+    --color-gray-800: oklch(25.2% 0 0); /* #222222 — $secondary_light */
+    --color-gray-900: oklch(21.78% 0 0); /* #1a1a1a — $light */
+    --color-gray-950: oklch(17.76% 0 0); /* #111111 — $body-bg */
+
+    /* ── Scheme ───────────────────────────────────────────────────────
+       Same token set as design-tokens' dark theme, Un Cinq values. */
+    --color-background: var(--color-gray-950); /* $body-bg */
+    --color-background-disabled: var(--color-gray-800);
+    --color-background-media: transparent;
+    --color-background-muted: var(--color-gray-900); /* $light */
+    --color-background-muted-hover: var(--color-gray-800); /* $secondary_light */
+    --color-border: var(--color-gray-700); /* $border-color */
+    --color-heading: var(--color-white); /* $headings-color */
+    --color-shadow: var(--color-white); /* a shadow on a dark ground is light */
+    --color-text: var(--color-white); /* $body-color */
+    --color-text-disabled: var(--color-gray-600);
+    --color-text-hover: var(--color-white);
+    --color-text-muted: var(--color-gray-400); /* $text-muted */
+    /* Anything printed on a muted surface: inline code, status badges,
+       keyfeature alerts. Upstream it assumes the surface is pale. */
+    --color-text-on-muted: var(--color-white);
+    --form-color-background: var(--color-gray-900);
+
+    /* ── Light family ─────────────────────────────────────────────────
+       A "light" surface on this site is a dark one. The SASS site said the
+       same thing with $light: darken(white, 90%) and its gray remaps.
+       Without this, a .block-light section paints a pale band across the
+       page and its heading stays white on it. */
+    --color-light: var(--color-gray-900); /* $light */
+    --color-light-hover: var(--color-gray-800);
+    /* $tertiary sits 0.88% of lightness under $light — too close to earn a
+       rung of its own on the ramp, so it stays a value here. */
+    --color-light-muted: oklch(20.9% 0 0); /* #181818 — $tertiary */
+    --color-light-strong: var(--color-gray-700); /* $border-color */
+    --color-text-on-light: var(--color-white);
+
+    /* ── Brand ────────────────────────────────────────────────────────
+       White here, where the theme's baseline is black. Everything that
+       sits on the brand colour has to turn dark with it — nothing else
+       would be readable on white. Accent aliases brand upstream, so it
+       follows on its own. */
+    --color-brand: var(--color-white); /* $primary */
+    --color-brand-hover: var(--color-gray-200);
+    --color-brand-muted: oklch(from var(--color-white) l c h / 0.1); /* surtitle badge */
+    --color-brand-strong: var(--color-white);
+    --color-text-on-accent: var(--color-black);
+    --color-text-on-brand: var(--color-black);
+
+    /* ── Components ───────────────────────────────────────────────────
+       The theme turns a page card cream under the pointer; on this ground
+       it steps up the dark ramp instead. */
+    --page-color-background-hover: var(--color-background-muted-hover);
+  }
+}

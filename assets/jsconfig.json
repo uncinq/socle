@@ -1,9 +1,0 @@
-{
- "compilerOptions": {
-  "paths": {
-   "*": [
-    "../../../../Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/hugolify/hugolify-theme-design-system@v0.0.0-20260921141343-e2cc7734f0ea/assets/*"
-   ]
-  }
- }
-}
