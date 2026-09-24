@@ -1,36 +1,62 @@
 ---
 isIndex: true
 title: Socle
-description: The Un Cinq CSS foundation, four framework-agnostic packages covering tokens, reset, layouts and components.
+description: A framework-agnostic CSS foundation, four packages covering tokens, reset, layouts and components.
 hero:
   surtitle: CSS foundation
   title: Framework-agnostic packages<br>covering tokens, reset, layouts and components.
   ctas:
     - text: Documentation
       url: /docs/
+    - text: GitHub
+      url: https://github.com/uncinq/
+      blank: true
+      link: true
 blocks:
+  - type: informations
+    column: 4
+    background: true
+    heading:
+      surtitle: Framework-agnostic
+      title: Works anywhere CSS does
+      text: The four packages emit plain CSS and custom properties. No runtime, no preprocessor, no framework binding, so the same entry stylesheet works in every environment.
+      ctas:
+        - text: Getting started
+          url: /docs/getting-started/
+    items:
+      - title: Static site generators
+        text: Hugo, Astro, Eleventy, Jekyll. Add the packages to your asset pipeline and import one entry stylesheet.
+        icon: lightning-charge
+      - title: PHP
+        text: Symfony, Laravel, WordPress. Ordinary npm dependencies, bundled like any other stylesheet.
+        icon: filetype-php
+      - title: E-commerce
+        text: Shopify, PrestaShop. Custom properties reach a theme without rewriting its templates.
+        icon: bag
+      - title: Any build pipeline
+        text: PostCSS, Vite, webpack, esbuild. The packages are plain CSS files, with no plugin of their own to install.
+        icon: code-slash
   - type: editorial
     title: "design-tokens"
-    text: "Reset, typography, forms, interactive states, and a set reading/writing rhythm for the content author. Zero design decisions, one layer order."
+    text: "Colours, typography, spacing, sizes, radii and motion, as primitive and semantic tokens. Imported once at the top of your entry stylesheet, and the one layer a project overrides to rebrand."
     direction: rtl
-    background: true
     ctas:
       - text: "View documentation"
-        url: "/docs/css-base/"
+        url: "/docs/design-tokens/"
     image:
       src: https://res.cloudinary.com/uncinq/image/upload/v1768396977/593.Drawing-Joy_eulvla.svg
   - type: editorial
+    background: true
     title: "component-tokens"
-    text: "Buttons, cards, navs, alerts, dropdowns, modals and other UI building blocks. Each uses design-tokens for its looks and css-base for its behaviour."
+    text: "One namespace per component, from --btn-* to --modal-*. Each maps a semantic value onto a part of a component, so you can restyle buttons alone without moving the brand colour."
     ctas:
       - text: "View documentation"
-        url: "/docs/css-base/"
+        url: "/docs/component-tokens/"
     image:
       src: https://res.cloudinary.com/uncinq/image/upload/v1768396979/595.Soup-Tasting_nxgnse.svg
   - type: editorial
-    background: true
     title: "css-base"
-    text: "CSS custom properties for colours, typography, spacing, sizes and radii. Intended to be imported once at the top of your entry stylesheet."
+    text: "Reset, native element styles and layout primitives. Unstyled markup already looks right, and every value comes from a token rather than a hardcoded rule."
     direction: rtl
     ctas:
       - text: "View documentation"
@@ -38,8 +64,9 @@ blocks:
     image:
       src: https://res.cloudinary.com/uncinq/image/upload/v1758117379/542.Reading-Expert_brqgji.svg
   - type: editorial
+    background: true
     title: "css-components"
-    text: "CSS custom properties for component-level tokens (border widths, shadows, focus outlines) that do not fit in design-tokens. Import after design-tokens."
+    text: "Buttons, cards, navs, alerts, dropdowns, modals and the rest. 29 components and 1 utility, reading their values from component-tokens and adding none of their own."
     ctas:
       - text: "View documentation"
         url: "/docs/css-components/"

@@ -16,6 +16,9 @@
             --bs-btn-hover-border-color: #{$gray-200}
             --bs-btn-active-border-color: #{$gray-200}
             --bs-btn-disabled-border-color: #{$gray-200}
+    @include media-breakpoint-up(lg)
+        .dropdown:has(.show)
+            background: $gray-200
 
 // Inline code
 // -----------

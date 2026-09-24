@@ -1,6 +1,6 @@
 _merge: deep
 
-description: The CSS foundation behind Un Cinq projects. Socle is French for foundation.
+description: A framework-agnostic CSS foundation. Socle is French for foundation.
 
 search:
   enable: true

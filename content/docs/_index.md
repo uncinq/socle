@@ -1,10 +1,10 @@
 ---
 isIndex: true
 title: Documentation
-description: The Un Cinq CSS foundation, four framework-agnostic packages covering tokens, reset, layouts and components.
+description: A framework-agnostic CSS foundation, four packages covering tokens, reset, layouts and components.
 ---
 
-**Socle** is the CSS foundation behind Un Cinq projects. *Socle* is French for foundation, which is what these four packages are: the ground you build a design system on, not the design system itself.
+**Socle** is a framework-agnostic CSS foundation, built by Un Cinq. *Socle* is French for foundation, which is what these four packages are: the ground you build a design system on, not the design system itself.
 
 They are deliberately neutral. Nothing here encodes an Un Cinq brand decision beyond a default that you are expected to override, and they work unchanged in Hugo, Symfony, Shopify or a plain HTML page.
 
