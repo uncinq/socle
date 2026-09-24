@@ -1,16 +1,10 @@
-# Hugolify v1 stack. v2 is not usable here yet: hugolify-theme-uncinqify, which
-# carries the Un Cinq branding, has no v2 (its latest tag is 1.2.2).
-#
-# Switching to v2 later means, in one go: adding the /v2 suffix to theme-docs
-# and theme, and adding hugolify-theme-design-system. The v2 core theme ships
-# no assets/ at all and delegates CSS and JS to that styling module, so it
-# cannot be omitted. Note that the design system imports @uncinq/css-base and
-# @uncinq/css-components directly, so on v2 this site would be styled by the
-# very packages it documents.
+# Hugolify
 imports:
-  - path: github.com/sebousan/hugolify-theme-uncinqify
-  - path: github.com/hugolify/hugolify-theme-docs
-  - path: github.com/hugolify/hugolify-theme
+  - path: github.com/sebousan/hugolify-theme-uncinqify/v2
+  - path: github.com/hugolify/hugolify-theme-docs/v2
+  - path: github.com/hugolify/hugolify-theme/v2
+  - path: github.com/hugolify/hugolify-theme-design-system
+  - path: github.com/hugolify/hugolify-theme-icons
 
 mounts:
   # Declaring a mount for a component removes Hugo's default mount for THAT

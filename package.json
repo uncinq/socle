@@ -1,12 +1,12 @@
 {
-  "name": "socle-uncinq-dev",
+  "name": "socle",
   "version": "1.0.0",
   "private": true,
-  "description": "Documentation site for the Un Cinq CSS foundation packages.",
+  "description": "Documentation site for a framework-agnostic CSS foundation, four packages covering tokens, reset, layouts and components.",
   "homepage": "https://socle.uncinq.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uncinq/socle.uncinq.dev.git"
+    "url": "https://github.com/uncinq/socle.git"
   },
   "author": {
     "name": "Un Cinq",
@@ -19,6 +19,7 @@
     "build:icons": "yarn build:icons:bootstrap",
     "build:icons:bootstrap": "node scripts/build-icons-bootstrap.js",
     "build:search": "yarn build && npm_config_yes=true npx pagefind --site 'public'",
+    "install:hugolify": "hugo mod get && hugo mod npm pack",
     "clean": "hugo mod clean",
     "tidy": "hugo mod tidy",
     "update": "hugo mod get -u"
@@ -39,5 +40,8 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "subset-font": "^2.9.0"
-  }
+  },
+  "workspaces": [
+    "packages/hugoautogen"
+  ]
 }

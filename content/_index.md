@@ -15,7 +15,9 @@ hero:
 blocks:
   - type: informations
     column: 4
-    background: true
+    ui:
+      align: center
+      theme: light
     heading:
       surtitle: Framework-agnostic
       title: Works anywhere CSS does
@@ -39,14 +41,17 @@ blocks:
   - type: editorial
     title: "design-tokens"
     text: "Colours, typography, spacing, sizes, radii and motion, as primitive and semantic tokens. Imported once at the top of your entry stylesheet, and the one layer a project overrides to rebrand."
-    direction: rtl
+    ui:
+      grid: full
+      direction: rtl
     ctas:
       - text: "View documentation"
         url: "/docs/design-tokens/"
     image:
       src: https://res.cloudinary.com/uncinq/image/upload/v1768396977/593.Drawing-Joy_eulvla.svg
   - type: editorial
-    background: true
+    ui:
+      grid: full
     title: "component-tokens"
     text: "One namespace per component, from --btn-* to --modal-*. Each maps a semantic value onto a part of a component, so you can restyle buttons alone without moving the brand colour."
     ctas:
@@ -57,14 +62,17 @@ blocks:
   - type: editorial
     title: "css-base"
     text: "Reset, native element styles and layout primitives. Unstyled markup already looks right, and every value comes from a token rather than a hardcoded rule."
-    direction: rtl
+    ui:
+      grid: full
+      direction: rtl
     ctas:
       - text: "View documentation"
         url: "/docs/css-base/"
     image:
       src: https://res.cloudinary.com/uncinq/image/upload/v1758117379/542.Reading-Expert_brqgji.svg
   - type: editorial
-    background: true
+    ui:
+      grid: full
     title: "css-components"
     text: "Buttons, cards, navs, alerts, dropdowns, modals and the rest. 29 components and 1 utility, reading their values from component-tokens and adding none of their own."
     ctas:
@@ -72,4 +80,21 @@ blocks:
         url: "/docs/css-components/"
     image:
       src: https://res.cloudinary.com/uncinq/image/upload/v1781600882/614.Problem-Solving_nbxuac.svg
+
+  - type: cta
+    ui:
+      align: center
+      theme: light
+    heading:
+      surtitle: Open-source
+      title: Support Us
+      text: Support our work and help us improve this project by becoming a sponsor or
+        giving us a star on our GitHub repositories.
+    ctas:
+      - text: Become a sponsor
+        url: https://github.com/sponsors/sebousan
+        blank: true
+      - text: Star on GitHub
+        url: https://github.com/uncinq
+        blank: true
 ---

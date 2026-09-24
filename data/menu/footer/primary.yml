@@ -1,0 +1,13 @@
+title: Documentation
+links:
+  - title: Getting started
+    url: /docs/getting-started/
+  - title: Design tokens
+    url: /docs/design-tokens/
+  - title: Component tokens
+    url: /docs/component-tokens/
+  - title: CSS base
+    url: /docs/css-base/
+  - title: CSS components
+    url: /docs/css-components/
+
