@@ -31,9 +31,9 @@
     fastq "^1.6.0"
 
 "@uncinq/component-tokens@^1.9.3":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@uncinq/component-tokens/-/component-tokens-1.10.1.tgz#20f73697ca7ca38bb30f1790de6869f9487df157"
-  integrity sha512-wpr5jrJ11Nclci9SyvETTJFCSxoyyRex07eaA8Wj9S73mMxWH0R5L6dFhToFBSeisvway7dbTVCtjyR94GmXsw==
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@uncinq/component-tokens/-/component-tokens-1.10.2.tgz#8b6785567e426cac8207d6b3f9001578476e5982"
+  integrity sha512-6y2sttt0XgNMWjOWGAamsNryl/3t/VD4jVWurID7cUMROnWP96CVkhFnf5SCOLcAC1BUA0fi0vCYfmx1diog4w==
 
 "@uncinq/css-base@^1.9.0":
   version "1.11.0"
@@ -46,9 +46,9 @@
   integrity sha512-KuBW/XJW5NkIHlCx50D43AcoehZKD1jriNTY+RIOT2l6LPojQBsoZNxH+3mI1PnE075dxRLvzZb41bbmDGTT0w==
 
 "@uncinq/design-tokens@^1.7.3":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@uncinq/design-tokens/-/design-tokens-1.8.1.tgz#f5f349fb4c63c4027b516aad88cd6a93f58f028c"
-  integrity sha512-hZD/8qdL9Pydj63dbR0fBcoN3So+GTmM3G+oQKY0gP+jzg9ue8wNzHlk6LugUeljAVFnm5j7wDMIi9OYMsTGMQ==
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@uncinq/design-tokens/-/design-tokens-1.8.2.tgz#7ed8e7851bdb8b85b297d08548c44f17899fdcfd"
+  integrity sha512-sIcppZiIJk33Tj+HiILl8iE7JuBJC4GX3P8WAO5jPrRb3n2+jrBXe6uDV141aHQWaeuI9gGi4NgqFKVBlow0Og==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
