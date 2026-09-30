@@ -134,6 +134,6 @@ Four checks, in the order things usually break:
 | --- | --- |
 | Change the brand colour | [design-tokens, customizing](../design-tokens/customizing/) |
 | Know what a token is worth | [design-tokens, reference](../design-tokens/reference/) |
-| Style a form | [css-base, base](../css-base/base/#forms) and [css-components, forms](../css-components/forms/) |
+| Style a form | [css-base, inputs and labels](../css-base/base/form/) and [css-components, forms](../css-components/forms/) |
 | Build a modal or a drawer | [css-components, overlays](../css-components/overlays/) |
 | Understand the layer order in depth | [css-base, cascade layers](../css-base/cascade-layers/) |
