@@ -36,9 +36,9 @@
   integrity sha512-6y2sttt0XgNMWjOWGAamsNryl/3t/VD4jVWurID7cUMROnWP96CVkhFnf5SCOLcAC1BUA0fi0vCYfmx1diog4w==
 
 "@uncinq/css-base@^1.9.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@uncinq/css-base/-/css-base-1.11.0.tgz#0d199cb4d5f109cf003e67e08b63cab4f994d5ca"
-  integrity sha512-MfuAZp6hYLHzRelGZovo1uK9ZR1KqTBWpQhgF7vEqbTfjZbdyZQmQ1d/BjtewD/HOX8I2AuF9mBjdVy80ydnxA==
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@uncinq/css-base/-/css-base-1.11.1.tgz#53278b8da86ca97acd71cc43b930d9aa46d0deb2"
+  integrity sha512-6wP+f0HJdAA21KNBqHzVsjGT3QcOp5ZR2fxdrFHrmesfxMnjaVSPN5+QvC8xr7d1cbgwP5b+Qc5xoMPuxLOF3A==
 
 "@uncinq/css-components@^1.15.3":
   version "1.16.4"
