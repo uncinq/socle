@@ -27,9 +27,9 @@ blocks:
       - title: Static site generators
         text: Hugo, Astro, Eleventy, Jekyll. Add the packages to your asset pipeline and import one entry stylesheet.
         icon: lightning-charge
-      - title: PHP
-        text: Symfony, Laravel, WordPress. Ordinary npm dependencies, bundled like any other stylesheet.
-        icon: filetype-php
+      - title: Server-rendered sites
+        text: Symfony, Laravel, Django, Rails. Ordinary npm dependencies, bundled like any other stylesheet.
+        icon: server
       - title: E-commerce
         text: Shopify, PrestaShop. Custom properties reach a theme without rewriting its templates.
         icon: bag
