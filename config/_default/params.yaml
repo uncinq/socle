@@ -2,9 +2,13 @@ _merge: deep
 
 description: A framework-agnostic CSS foundation. Socle is French for foundation.
 
+# The design system loads Splide and Leaflet by default; no page here needs them.
+carousel: false
+map: false
+
 search:
   enable: true
-  layout: offcanvas
+  layout: drawer
   showImages: false
   sort: true
 
