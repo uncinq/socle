@@ -1,0 +1,7 @@
+@layer components {
+  /* The editorial illustrations are black line drawings: on this dark ground
+     they are inverted to white, unless the block paints a pale surface. */
+  .block-editorial:not(.block-white, .block-highlight) img {
+    filter: invert(1);
+  }
+}

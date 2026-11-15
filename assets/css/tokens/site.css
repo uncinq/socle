@@ -87,6 +87,8 @@
     --color-on-accent: var(--color-black);
     --color-on-brand: var(--color-black);
 
+   --hero-home-height: var(--hero-height);
+
     /* ── Shape ────────────────────────────────────────────────────────
        The v1 site rounded everything to $border-radius: 2rem, where the
        theme keeps small radii: pill buttons, badges and inputs, round
