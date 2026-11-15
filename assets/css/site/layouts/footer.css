@@ -1,0 +1,23 @@
+/* site/layouts/header.css */
+@layer layouts {
+  footer[role='contentinfo'] {
+    @media (--sm) {
+      .brand {
+        grid-column: span 5 !important;
+      }
+      .brand + div {
+        grid-column: 7 / span 4 !important;
+      }
+      .nav-footer-primary {
+        --nav-direction: row;
+        flex-wrap: wrap;
+        li {
+          width: 50%;
+          &:first-child {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

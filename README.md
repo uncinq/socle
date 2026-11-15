@@ -6,10 +6,10 @@
 
 **Socle** is French for *foundation*, which is what the four packages it documents are: the ground you build a design system on, not the design system itself.
 
-- [@uncinq/design-tokens](https://github.com/uncinq/design-tokens) — primitive and semantic tokens
-- [@uncinq/component-tokens](https://github.com/uncinq/component-tokens) — component-scoped tokens
-- [@uncinq/css-base](https://github.com/uncinq/css-base) — reset, native elements, layouts
-- [@uncinq/css-components](https://github.com/uncinq/css-components) — component implementations
+- [@uncinq/design-tokens](https://github.com/uncinq/design-tokens): primitive and semantic tokens
+- [@uncinq/component-tokens](https://github.com/uncinq/component-tokens): component-scoped tokens
+- [@uncinq/css-base](https://github.com/uncinq/css-base): reset, native elements, layouts
+- [@uncinq/css-components](https://github.com/uncinq/css-components): component implementations
 
 ## How it works
 
@@ -20,6 +20,8 @@ Nothing is copied, so the documentation cannot drift from the package it describ
 The token reference tables are generated the same way, from `dist/tokens.json`, produced by each token package from the same sources as its CSS.
 
 What lives here: the overview and Getting started pages, the `tokens` shortcode, the theme configuration and the branding.
+
+The site runs on Hugolify v2 with hugolify-theme-design-system, which builds its stylesheet from `@uncinq/css-base` and `@uncinq/css-components`: the site is styled by the very packages it documents, under the Un Cinq theme (hugolify-theme-uncinqify) and the dark palette of `assets/css/tokens/site.css`.
 
 ## Development
 
@@ -35,10 +37,11 @@ cd ../css-base && yarn link     # once per package
 cd ../socle.uncinq.dev && yarn link @uncinq/css-base
 ```
 
-Run `yarn unlink @uncinq/css-base` to go back to the published version.
+Run `yarn unlink @uncinq/css-base` to go back to the published version. A linked package also restyles the site, since the design system imports it.
 
 | Command | Does |
 | --- | --- |
+| `yarn install:hugolify` | Fetch the Hugo modules and regenerate their npm workspace, `packages/hugoautogen` |
 | `yarn watch` | Local server with live reload |
 | `yarn build` | Production build |
 | `yarn build:search` | Build, then index with Pagefind |

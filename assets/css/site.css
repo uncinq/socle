@@ -1,0 +1,4 @@
+/* site.css */
+@import './site/components/blocks/editorial.css';
+@import './site/components/main-menu.css';
+@import './site/layouts/footer.css';

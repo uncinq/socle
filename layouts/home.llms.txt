@@ -1,5 +1,5 @@
 {{- /*
-  /llms-full.txt — the whole documentation as plain text, in one request.
+  /llms-full.txt: the whole documentation as plain text, in one request.
 
   Renders the Markdown source rather than the rendered HTML, so the output stays
   readable and keeps its structure. Pages are walked in sidebar order (section

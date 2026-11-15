@@ -3,7 +3,7 @@ isIndex: false
 title: Getting started
 description: Installing the four packages, declaring the cascade layer order, and the build step every environment needs.
 weight: 1
-icon: 1-square
+icon: rocket
 ---
 
 The setup is the same everywhere: install four npm packages, write one entry stylesheet, run it through PostCSS. Only the last step differs from one environment to the next, and the differences are small.
