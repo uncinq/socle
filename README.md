@@ -52,6 +52,10 @@ Netlify, from `main`. The build refreshes the four packages before building, and
 
 `/llms-full.txt` serves the whole documentation as plain text in one request.
 
+## Sponsors
+
+Socle is free and open source. If it saves you time, you can support its development on [GitHub Sponsors](https://github.com/sponsors/sebousan).
+
 ## License
 
 MIT © [Un Cinq](https://uncinq.dev/)
