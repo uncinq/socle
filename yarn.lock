@@ -221,25 +221,45 @@
     "@jsonjoy.com/buffers" "^1.0.0"
     "@jsonjoy.com/codegen" "^1.0.0"
 
-"@uncinq/component-tokens@^1.0.0", "@uncinq/component-tokens@^1.14.0":
+"@uncinq/component-tokens@^1.0.0":
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/@uncinq/component-tokens/-/component-tokens-1.14.0.tgz#d3a2dceffab2d7ca839d5b8005692652686c8702"
   integrity sha512-NjN6Iv9Nj3sLUjc08sm1pdR33/lW1UJTFxDHW9WEVVJppkv+e1+Ylb9aS7FS+B3xg3RuzWLXfa7NnPjAngA0Wg==
 
-"@uncinq/css-base@^1.0.0", "@uncinq/css-base@^1.14.0":
+"@uncinq/component-tokens@^1.14.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@uncinq/component-tokens/-/component-tokens-1.15.0.tgz#6c9cd8121260334fd50a67cb236e3de54ef9fe60"
+  integrity sha512-EwUetSuRj6gsqETUQ7qh+l663EsnqL1Ag+Sq5CYt6we4mlYmeDNGyPj8Cv14CI7cMa32JuGdyBoqBcLZVtZXQw==
+
+"@uncinq/css-base@^1.0.0":
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/@uncinq/css-base/-/css-base-1.14.0.tgz#41123ff43c6fefd4812bfa384d60d18b83dcf6fa"
   integrity sha512-wg4PNeaRDL3Mli515U52fpVK25kHj3VHAXbiV9/+VOyqUoDv07FteMq7TsIBHHPEYQ+aOZE7jOI4U/zYW3JdBQ==
 
-"@uncinq/css-components@^1.18.0", "@uncinq/css-components@^1.30.0":
+"@uncinq/css-base@^1.14.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@uncinq/css-base/-/css-base-1.15.0.tgz#0a411b06b4f5756c3eed4146872c53b743c58a79"
+  integrity sha512-bMUr/KAg11Mm7VkYhz6+5ZLY8L157YiNXtqemqAB/2yyyBnA+ndV/q6lJDDFHiEf7pZdFwC5E+C2wQ4JLKS6Hw==
+
+"@uncinq/css-components@^1.18.0":
   version "1.31.1"
   resolved "https://registry.yarnpkg.com/@uncinq/css-components/-/css-components-1.31.1.tgz#887fc6c94d4ed2107120acb3d2816764f24ffaba"
   integrity sha512-gDC4ztv9oLPhMYSgGN+DDxXPCJufIw96SLW8QBvuBnRNe/nwNWdTU8ZxiWBEqtAWvLWpMJAO9K7m6UllMlYCJw==
 
-"@uncinq/design-tokens@^1.0.0", "@uncinq/design-tokens@^1.10.0":
+"@uncinq/css-components@^1.30.0":
+  version "1.31.3"
+  resolved "https://registry.yarnpkg.com/@uncinq/css-components/-/css-components-1.31.3.tgz#357b2a7e1f3640e00f53643b48752a1f02ab0b54"
+  integrity sha512-28gWNzA4MwfJi6RiRqjc8XnKvMfkZveTLRxreBxpWnsl9IjG3/9Gg00mVGe/cKZwUiIK+hKtB5BYITXsF85oeg==
+
+"@uncinq/design-tokens@^1.0.0":
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/@uncinq/design-tokens/-/design-tokens-1.10.0.tgz#53922577828340e1ba3bd81ed71398245d207686"
   integrity sha512-I+z6CvrfjzxUIndV6G7D570cgMbN+etwzmh78Of6N2cSV//6x6mHibyXI0KQ4KnnpjJl6SVN1ecpW9KabLvH9A==
+
+"@uncinq/design-tokens@^1.10.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@uncinq/design-tokens/-/design-tokens-1.11.0.tgz#1e27686576345ce133d757b32c20496c8fa79b9f"
+  integrity sha512-Zcb3kzQTrOJL78jpHy/G9AkKZJCjjpZWFJRcojriGuTh/nPdbP/SPflBLnEa6gC9Y3A5X9pDKER2zH/BakjSXA==
 
 "@zip.js/zip.js@^2.7.44":
   version "2.25.0"
