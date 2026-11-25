@@ -1,0 +1,8 @@
+body: |
+  # Socle
+
+  > A framework-agnostic CSS foundation. Socle is French for foundation.
+
+  This file inlines the whole documentation as its Markdown source, in the order of the site's sidebar. Each package's section is maintained in its own repository, under docs/, and mounted here from node_modules: nothing is transcribed.
+sections:
+  - docs
